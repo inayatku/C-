@@ -1,0 +1,40 @@
+Project Name: Enumeration of any Linear Programming Polyhedron
+
+Overview:
+This project provides a program that can check the feasibility of solutions for a set of linear programming constraints. The program takes a set of constraint equations and variables as input and determines whether each basic solution is feasible or not. Additionally, it checks which planes touch the feasible region.
+
+Project Structure:
+The project consists of three main files:
+
+header.h: Contains the declaration of the LinearProgramming class and its member functions and global variables used in the program.
+
+implementation.cpp: Contains the definitions of all member functions declared in the LinearProgramming class.
+
+main.cpp: Contains the main function, which initializes the constraints and calls the necessary functions to check feasibility and binding planes.
+
+
+Class and Member Functions:
+
+class LinearProgramming: Represents a linear programming problem and provides member functions to enumerate it.
+
+int var; // Number of variables in the problem
+int const_num; // Number of constraints in the problem
+float mat[m][n]; // Constraint matrix
+float soln[m][n]; // Solution matrix
+void display(float a[], int k); // Displays the first k elements of the input array 'a'.
+void comb(int s[], int k, int fix); // Computes the combination of k equations from the mat[][] matrix based on the input array s[]. The 'fix' parameter specifies the number of fixed elements.
+void fixcomb(int s[], int noofelmts, int fixpos); // Fixes the specified element at fixpos in the s[] array and calls the comb function.
+void intchange(int& a , int& b); // Swaps the values of the two input integers a and b.
+void copyArray(int a[], int b[]); // Copies the content of array 'a' to array 'b'.
+void del(int a[], int d); // Deletes the element at position 'd' from the input array 'a'.
+void displayMat(int r, int c); // Displays the matrix 'mat' with 'r' rows and 'c' columns.
+void solve(int k , int b[]); // Solves the specified equations in 'mat' array based on the given 'b' array and stores the result in the global 'soln' array.
+void feasibility(); // Checks the feasibility of solutions for the given constraints and displays the results.
+bool isfeasible(float asoln[n]); // Returns true if the given solution 'asoln' is feasible for the given constraints in 'mat' array.
+void bindingPlanesHelper(int index[]); // Determines which planes touch the feasible region.
+
+Usage:
+To use the program, compile and run the 'main.cpp' file. The program will process the given constraints, determine the feasibility of solutions, and output the results. To customize the constraints, modify the LinearProgramming class's 'mat' matrix in the main function.
+
+Limitations:
+The current implementation uses a fixed-size matrix for storing constraints and solutions. If the number of constraints or variables exceeds the predefined size, the program may encounter errors. To handle larger problems, the program should be modified to use dynamic memory allocation.
