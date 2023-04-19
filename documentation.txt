@@ -1,14 +1,14 @@
 Project Name: Enumeration of any Linear Programming Polyhedron
 
 Overview:
-This project provides a program that can check the feasibility of solutions for a set of linear programming constraints. The program takes a set of constraint equations and variables as input and determines whether each basic solution is feasible or not. Additionally, it checks which planes touch the feasible region.
+This project provides a program that can check the feasibility of corner point solutions of a linear programming problem. The program takes a set of constraint inequalities and variables as input and determines whether each basic solution is feasible or not. Additionally, it checks which planes touch the feasible region.
 
 Project Structure:
 The project consists of three main files:
 
-header.h: Contains the declaration of the LinearProgramming class and its member functions and global variables used in the program.
+Linearprogramming.h: Contains the declaration of the LinearProgramming class and its member functions and global variables used in the program.
 
-implementation.cpp: Contains the definitions of all member functions declared in the LinearProgramming class.
+Linearprogramming.cpp: Contains the definitions of all member functions declared in the LinearProgramming class.
 
 main.cpp: Contains the main function, which initializes the constraints and calls the necessary functions to check feasibility and binding planes.
 
